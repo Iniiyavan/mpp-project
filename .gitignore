@@ -1,0 +1,29 @@
+# Production
+node_modules
+dist
+dist-ssr
+*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+.env
+
+# Models (Ensure these are NOT ignored for deployment)
+!model_fixed.h5
+!fake_images_hashes.json
+
+# Logs and Debug
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

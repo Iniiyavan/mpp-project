@@ -1,0 +1,17 @@
+tf.keras ERROR: Exception encountered when calling Flatten.call().
+
+[1m'list' object has no attribute 'shape'[0m
+
+Arguments received by Flatten.call():
+  • args=(['<KerasTensor shape=(None, 4, 4, 512), dtype=float32, sparse=False, ragged=False, name=keras_tensor_37>'],)
+  • kwargs=<class 'inspect._empty'>
+tf_keras ERROR: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 128, 128, 3], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer_1'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+keras ERROR: Exception encountered when calling Flatten.call().
+
+[1m'list' object has no attribute 'shape'[0m
+
+Arguments received by Flatten.call():
+  • args=(['<KerasTensor shape=(None, 4, 4, 512), dtype=float32, sparse=False, ragged=False, name=keras_tensor_75>'],)
+  • kwargs=<class 'inspect._empty'>

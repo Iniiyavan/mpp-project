@@ -1,0 +1,595 @@
+{
+  "analysis_timestamp": "2025-12-21T21:06:47.293034",
+  "total_images_analyzed": 73,
+  "correctly_detected_as_fake": 0,
+  "accuracy_percentage": "0.00%",
+  "predicted_as_fake": 0,
+  "predicted_as_real": 73,
+  "false_negatives": 73,
+  "results": [
+    {
+      "filename": "ZLF5MREGGV.jpg",
+      "filepath": "Fake\\ZLF5MREGGV.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2714357078075409,
+      "confidence_percent": "72.86%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZLFIOQGDHL.jpg",
+      "filepath": "Fake\\ZLFIOQGDHL.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2568221986293793,
+      "confidence_percent": "74.32%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZLKAL2TCTD.jpg",
+      "filepath": "Fake\\ZLKAL2TCTD.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3373091220855713,
+      "confidence_percent": "66.27%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZLY08ZMY5Y.jpg",
+      "filepath": "Fake\\ZLY08ZMY5Y.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.24989338219165802,
+      "confidence_percent": "75.01%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZM02W8T85C.jpg",
+      "filepath": "Fake\\ZM02W8T85C.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.24264833331108093,
+      "confidence_percent": "75.74%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZM133UEHGI.jpg",
+      "filepath": "Fake\\ZM133UEHGI.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3623349368572235,
+      "confidence_percent": "63.77%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZM3APOPZSG.jpg",
+      "filepath": "Fake\\ZM3APOPZSG.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.31242915987968445,
+      "confidence_percent": "68.76%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZM5CJDUZOG.jpg",
+      "filepath": "Fake\\ZM5CJDUZOG.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2858646512031555,
+      "confidence_percent": "71.41%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZMELV36WK6.jpg",
+      "filepath": "Fake\\ZMELV36WK6.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.20561641454696655,
+      "confidence_percent": "79.44%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZMKK6YHDO1.jpg",
+      "filepath": "Fake\\ZMKK6YHDO1.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.26774004101753235,
+      "confidence_percent": "73.23%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZMOOE8PMUC.jpg",
+      "filepath": "Fake\\ZMOOE8PMUC.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.13223935663700104,
+      "confidence_percent": "86.78%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZMOP09Z3U6.jpg",
+      "filepath": "Fake\\ZMOP09Z3U6.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.26131126284599304,
+      "confidence_percent": "73.87%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZN3CSFEEWK.jpg",
+      "filepath": "Fake\\ZN3CSFEEWK.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.26119178533554077,
+      "confidence_percent": "73.88%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZN8EY2891J.jpg",
+      "filepath": "Fake\\ZN8EY2891J.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2476731389760971,
+      "confidence_percent": "75.23%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZN9LVCV98F.jpg",
+      "filepath": "Fake\\ZN9LVCV98F.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.23023250699043274,
+      "confidence_percent": "76.98%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZNCAYTP1O6.jpg",
+      "filepath": "Fake\\ZNCAYTP1O6.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.18967126309871674,
+      "confidence_percent": "81.03%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZNFIK51BF9.jpg",
+      "filepath": "Fake\\ZNFIK51BF9.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2396656721830368,
+      "confidence_percent": "76.03%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZNLBLAHLCZ.jpg",
+      "filepath": "Fake\\ZNLBLAHLCZ.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2139730453491211,
+      "confidence_percent": "78.60%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZNM48W59YQ.jpg",
+      "filepath": "Fake\\ZNM48W59YQ.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3123091459274292,
+      "confidence_percent": "68.77%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZNWDXQ0GEV.jpg",
+      "filepath": "Fake\\ZNWDXQ0GEV.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.19240809977054596,
+      "confidence_percent": "80.76%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZNWZSZ00F5.jpg",
+      "filepath": "Fake\\ZNWZSZ00F5.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.31750330328941345,
+      "confidence_percent": "68.25%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZNZNQN9F2L.jpg",
+      "filepath": "Fake\\ZNZNQN9F2L.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.27929598093032837,
+      "confidence_percent": "72.07%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZO1PT9FJT9.jpg",
+      "filepath": "Fake\\ZO1PT9FJT9.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.25055843591690063,
+      "confidence_percent": "74.94%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZODM4CIJCO.jpg",
+      "filepath": "Fake\\ZODM4CIJCO.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.23779718577861786,
+      "confidence_percent": "76.22%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZOY48DSJ75.jpg",
+      "filepath": "Fake\\ZOY48DSJ75.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3455696403980255,
+      "confidence_percent": "65.44%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZP0Q1RHTDU.jpg",
+      "filepath": "Fake\\ZP0Q1RHTDU.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.30241861939430237,
+      "confidence_percent": "69.76%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZPE63XXENL.jpg",
+      "filepath": "Fake\\ZPE63XXENL.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3016301393508911,
+      "confidence_percent": "69.84%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZPF31MRZXJ.jpg",
+      "filepath": "Fake\\ZPF31MRZXJ.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3338557481765747,
+      "confidence_percent": "66.61%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZPFOQPQMSM.jpg",
+      "filepath": "Fake\\ZPFOQPQMSM.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2352844476699829,
+      "confidence_percent": "76.47%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZPL6GVT7WK.jpg",
+      "filepath": "Fake\\ZPL6GVT7WK.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2355613261461258,
+      "confidence_percent": "76.44%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZPMTWXR7NP.jpg",
+      "filepath": "Fake\\ZPMTWXR7NP.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2248612344264984,
+      "confidence_percent": "77.51%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZPYPKN9FOD.jpg",
+      "filepath": "Fake\\ZPYPKN9FOD.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3190632462501526,
+      "confidence_percent": "68.09%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZQGD971X4D.jpg",
+      "filepath": "Fake\\ZQGD971X4D.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.183461993932724,
+      "confidence_percent": "81.65%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZQKPW81GA2.jpg",
+      "filepath": "Fake\\ZQKPW81GA2.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2941018342971802,
+      "confidence_percent": "70.59%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZQTL5L3D46.jpg",
+      "filepath": "Fake\\ZQTL5L3D46.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.25109371542930603,
+      "confidence_percent": "74.89%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZR14KUDI1C.jpg",
+      "filepath": "Fake\\ZR14KUDI1C.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2183772474527359,
+      "confidence_percent": "78.16%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZRIK8I3KK8.jpg",
+      "filepath": "Fake\\ZRIK8I3KK8.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2637430727481842,
+      "confidence_percent": "73.63%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZS0GBTO14G.jpg",
+      "filepath": "Fake\\ZS0GBTO14G.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.16785138845443726,
+      "confidence_percent": "83.21%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZSICRYI2ZY.jpg",
+      "filepath": "Fake\\ZSICRYI2ZY.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.27505558729171753,
+      "confidence_percent": "72.49%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZSS4NNL134.jpg",
+      "filepath": "Fake\\ZSS4NNL134.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3323777914047241,
+      "confidence_percent": "66.76%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZTD52IAXVT.jpg",
+      "filepath": "Fake\\ZTD52IAXVT.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.24480657279491425,
+      "confidence_percent": "75.52%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZTE6W19N3E.jpg",
+      "filepath": "Fake\\ZTE6W19N3E.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.48684900999069214,
+      "confidence_percent": "51.32%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZTI6OBO1GW.jpg",
+      "filepath": "Fake\\ZTI6OBO1GW.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.20515398681163788,
+      "confidence_percent": "79.48%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZTNFB6MSPB.jpg",
+      "filepath": "Fake\\ZTNFB6MSPB.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.34344717860221863,
+      "confidence_percent": "65.66%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZTQABEDK6F.jpg",
+      "filepath": "Fake\\ZTQABEDK6F.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2972438931465149,
+      "confidence_percent": "70.28%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZTRF17ML5Y.jpg",
+      "filepath": "Fake\\ZTRF17ML5Y.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.21222075819969177,
+      "confidence_percent": "78.78%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZTXYH5MWKR.jpg",
+      "filepath": "Fake\\ZTXYH5MWKR.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3342725932598114,
+      "confidence_percent": "66.57%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZU2O9X8DZZ.jpg",
+      "filepath": "Fake\\ZU2O9X8DZZ.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.19570747017860413,
+      "confidence_percent": "80.43%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZU37GJESQ9.jpg",
+      "filepath": "Fake\\ZU37GJESQ9.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.1914331316947937,
+      "confidence_percent": "80.86%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZUBTEX043P.jpg",
+      "filepath": "Fake\\ZUBTEX043P.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2396661341190338,
+      "confidence_percent": "76.03%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZV356JTNBP.jpg",
+      "filepath": "Fake\\ZV356JTNBP.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.34726008772850037,
+      "confidence_percent": "65.27%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZV6XAC4CDP.jpg",
+      "filepath": "Fake\\ZV6XAC4CDP.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2601102888584137,
+      "confidence_percent": "73.99%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZVJ57H894X.jpg",
+      "filepath": "Fake\\ZVJ57H894X.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2976563274860382,
+      "confidence_percent": "70.23%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZW11KRWZLZ.jpg",
+      "filepath": "Fake\\ZW11KRWZLZ.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.38342025876045227,
+      "confidence_percent": "61.66%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZWOHOIBUWE.jpg",
+      "filepath": "Fake\\ZWOHOIBUWE.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.21066878736019135,
+      "confidence_percent": "78.93%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZWSWKDWQ79.jpg",
+      "filepath": "Fake\\ZWSWKDWQ79.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.22569377720355988,
+      "confidence_percent": "77.43%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZWXLPKXGWP.jpg",
+      "filepath": "Fake\\ZWXLPKXGWP.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3545158803462982,
+      "confidence_percent": "64.55%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZX8PZX28CK.jpg",
+      "filepath": "Fake\\ZX8PZX28CK.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2093621790409088,
+      "confidence_percent": "79.06%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZXMHL7KX7X.jpg",
+      "filepath": "Fake\\ZXMHL7KX7X.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2185412496328354,
+      "confidence_percent": "78.15%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZXTPTQ67WH.jpg",
+      "filepath": "Fake\\ZXTPTQ67WH.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2988215684890747,
+      "confidence_percent": "70.12%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZY4LHDLEY9.jpg",
+      "filepath": "Fake\\ZY4LHDLEY9.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3410088121891022,
+      "confidence_percent": "65.90%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZYK5WFVLA1.jpg",
+      "filepath": "Fake\\ZYK5WFVLA1.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.24556900560855865,
+      "confidence_percent": "75.44%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZYRG83IVL9 (1).jpg",
+      "filepath": "Fake\\ZYRG83IVL9 (1).jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3010825514793396,
+      "confidence_percent": "69.89%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZYRG83IVL9.jpg",
+      "filepath": "Fake\\ZYRG83IVL9.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3010825514793396,
+      "confidence_percent": "69.89%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZYRKB9514S.jpg",
+      "filepath": "Fake\\ZYRKB9514S.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2254866510629654,
+      "confidence_percent": "77.45%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZYSWFHGWG4.jpg",
+      "filepath": "Fake\\ZYSWFHGWG4.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.23710447549819946,
+      "confidence_percent": "76.29%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZYZ6FMPON2.jpg",
+      "filepath": "Fake\\ZYZ6FMPON2.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.21271824836730957,
+      "confidence_percent": "78.73%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZZ99XBFTMM.jpg",
+      "filepath": "Fake\\ZZ99XBFTMM.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.25595447421073914,
+      "confidence_percent": "74.40%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZZA9QHUR78.jpg",
+      "filepath": "Fake\\ZZA9QHUR78.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.23058216273784637,
+      "confidence_percent": "76.94%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZZBO1E1HDV.jpg",
+      "filepath": "Fake\\ZZBO1E1HDV.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2545677125453949,
+      "confidence_percent": "74.54%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZZKYMLUMOP.jpg",
+      "filepath": "Fake\\ZZKYMLUMOP.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.3695114850997925,
+      "confidence_percent": "63.05%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZZQA8E7G26.jpg",
+      "filepath": "Fake\\ZZQA8E7G26.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.2968975305557251,
+      "confidence_percent": "70.31%",
+      "is_correct": false
+    },
+    {
+      "filename": "ZZRX6JQIXQ.jpg",
+      "filepath": "Fake\\ZZRX6JQIXQ.jpg",
+      "prediction": "REAL",
+      "confidence_score": 0.25718677043914795,
+      "confidence_percent": "74.28%",
+      "is_correct": false
+    }
+  ]
+}
