@@ -84,8 +84,24 @@ const Dashboard = () => {
         }, 5000);
     };
 
-    // Simulate occasional system alerts
+    // Check backend health on mount
     useEffect(() => {
+        const checkEngine = async () => {
+            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5002';
+            try {
+                const res = await fetch(`${apiUrl}/health`);
+                if (res.ok) {
+                    addNotification('🚀 Neural Engine Connected', 'success');
+                } else {
+                    addNotification('⚠️ Neural Engine returned an error', 'error');
+                }
+            } catch (e) {
+                console.error('Engine connectivity check failed:', e);
+                addNotification(`📡 Connection to ${apiUrl} failed.`, 'error');
+            }
+        };
+        checkEngine();
+
         const timer = setInterval(() => {
             if (activeTab === 'detection' && Math.random() > 0.7) {
                 addNotification('New network scan initiated by system', 'info');
@@ -335,10 +351,11 @@ const Dashboard = () => {
                 });
             }
         } catch (err) {
-            console.error(err);
+            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5002';
+            console.error('Analysis failed:', err);
             setIsAnalyzing(false);
             addNotification(err.message === 'Failed to fetch'
-                ? 'AI Engine Offline. Please start app.py'
+                ? `AI Engine Offline at ${apiUrl}. Please ensure the server is running.`
                 : `AI Engine Error: ${err.message}`, 'error');
         }
     };
@@ -786,21 +803,21 @@ const Dashboard = () => {
                                                     animate={{ opacity: 1, scale: 1 }}
                                                     transition={{ delay: index * 0.05 }}
                                                     className={`p-4 rounded-xl border transition-all ${file.status === 'completed'
-                                                            ? file.result === 'FAKE'
-                                                                ? 'bg-red-50 dark:bg-red-900/10 border-red-200 dark:border-red-900/30'
-                                                                : 'bg-green-50 dark:bg-green-900/10 border-green-200 dark:border-green-900/30'
-                                                            : file.status === 'processing'
-                                                                ? 'bg-blue-50 dark:bg-blue-900/10 border-blue-200 dark:border-blue-900/30 animate-pulse'
-                                                                : file.status === 'failed'
-                                                                    ? 'bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700'
-                                                                    : 'bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700'
+                                                        ? file.result === 'FAKE'
+                                                            ? 'bg-red-50 dark:bg-red-900/10 border-red-200 dark:border-red-900/30'
+                                                            : 'bg-green-50 dark:bg-green-900/10 border-green-200 dark:border-green-900/30'
+                                                        : file.status === 'processing'
+                                                            ? 'bg-blue-50 dark:bg-blue-900/10 border-blue-200 dark:border-blue-900/30 animate-pulse'
+                                                            : file.status === 'failed'
+                                                                ? 'bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700'
+                                                                : 'bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700'
                                                         }`}
                                                 >
                                                     <div className="flex items-center gap-3 mb-3">
                                                         <div className={`w-3 h-3 rounded-full ${file.status === 'completed' && file.result === 'FAKE' ? 'bg-red-500' :
-                                                                file.status === 'completed' && file.result === 'REAL' ? 'bg-green-500' :
-                                                                    file.status === 'processing' ? 'bg-blue-500 animate-pulse' :
-                                                                        file.status === 'failed' ? 'bg-gray-500' : 'bg-gray-400'
+                                                            file.status === 'completed' && file.result === 'REAL' ? 'bg-green-500' :
+                                                                file.status === 'processing' ? 'bg-blue-500 animate-pulse' :
+                                                                    file.status === 'failed' ? 'bg-gray-500' : 'bg-gray-400'
                                                             }`} />
                                                         <div className="flex-1 min-w-0">
                                                             <div className="text-sm font-bold text-gray-900 dark:text-white truncate">
@@ -1211,8 +1228,8 @@ const Dashboard = () => {
                                                     <div className="flex justify-between items-center">
                                                         <span className="text-sm font-bold text-gray-600 dark:text-gray-400">Method Used</span>
                                                         <span className={`px-3 py-1 rounded-full text-xs font-black ${lastAnalysis.detection_method === 'hash_based' ? 'bg-green-500/10 text-green-600' :
-                                                                lastAnalysis.detection_method === 'hybrid_ai_stats' ? 'bg-blue-500/10 text-blue-600' :
-                                                                    'bg-yellow-500/10 text-yellow-600'
+                                                            lastAnalysis.detection_method === 'hybrid_ai_stats' ? 'bg-blue-500/10 text-blue-600' :
+                                                                'bg-yellow-500/10 text-yellow-600'
                                                             }`}>
                                                             {lastAnalysis.detection_method.replace('_', ' ').toUpperCase()}
                                                         </span>

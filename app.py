@@ -17,7 +17,7 @@ from scipy import stats
 from skimage import filters
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}}) # Explicitly allow all origins for production
 
 MODEL_PATH = 'model_fixed.h5'
 FAKE_HASHES_PATH = 'fake_images_hashes.json'
