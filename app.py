@@ -112,19 +112,23 @@ def analyze_image_statistics(image):
         # 4. Compression artifact detection
         compression_score = calculate_compression_score(gray)
 
-        # Combine scores (weighted average)
-        hybrid_score = (
-            noise_score * 0.3 +
-            edge_score * 0.25 +
-            color_score * 0.25 +
-            compression_score * 0.2
-        )
-
-        return hybrid_score
+        return {
+            'hybrid_score': hybrid_score,
+            'noise_score': noise_score,
+            'edge_score': edge_score,
+            'color_score': color_score,
+            'compression_score': compression_score
+        }
 
     except Exception as e:
         print(f"Statistical analysis error: {e}")
-        return 0.5  # Neutral score
+        return {
+            'hybrid_score': 0.5,
+            'noise_score': 0.5,
+            'edge_score': 0.5,
+            'color_score': 0.5,
+            'compression_score': 0.5
+        }
 
 def calculate_noise_score(gray_image):
     """Analyze noise patterns typical of AI generation"""
@@ -292,7 +296,8 @@ def predict():
         ai_confidence = (ai_score if ai_score > 0.5 else (1 - ai_score)) * 100
 
         # PHASE 4: Statistical Analysis
-        stats_score = analyze_image_statistics(img)
+        stats_data = analyze_image_statistics(img)
+        stats_score = stats_data['hybrid_score']
 
         # PHASE 5: Hybrid Decision Making
         final_result, final_confidence, detection_method = hybrid_detection_decision(
@@ -300,14 +305,20 @@ def predict():
         )
 
         print(f"Hybrid Analysis: {final_result} ({final_confidence}) - Method: {detection_method}")
-        print(".3f")
+        print(f"Detailed Stats: Noise={stats_data['noise_score']:.2f}, Edge={stats_data['edge_score']:.2f}, Color={stats_data['color_score']:.2f}")
 
         return jsonify({
             'result': final_result,
             'confidence': final_confidence,
             'detection_method': detection_method,
             'ai_model_confidence': f"{ai_confidence:.1f}%",
-            'stats_score': f"{stats_score:.3f}"
+            'stats_score': f"{stats_score:.3f}",
+            'pixel_stats': {
+                'noise': f"{stats_data['noise_score']:.3f}",
+                'edges': f"{stats_data['edge_score']:.3f}",
+                'chroma': f"{stats_data['color_score']:.3f}",
+                'artifacts': f"{stats_data['compression_score']:.3f}"
+            }
         })
     except Exception as e:
         print(f"Prediction Error: {str(e)}")

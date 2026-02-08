@@ -290,7 +290,8 @@ const Dashboard = () => {
             formData.append('file', blob, 'analysis_target.jpg');
 
             // 2. Send to our Python AI Server
-            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5002';
+            const rawApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5002';
+            const apiUrl = rawApiUrl.replace(/\/+$/, ''); // Remove trailing slashes
             const aiResponse = await fetch(`${apiUrl}/predict`, {
                 method: 'POST',
                 body: formData,
@@ -321,6 +322,7 @@ const Dashboard = () => {
                 detection_method: data.detection_method || 'ai_model',
                 ai_model_confidence: data.ai_model_confidence || data.confidence,
                 stats_score: data.stats_score || '0.000',
+                pixel_stats: data.pixel_stats || {},
                 technical_explanation: generateTechnicalExplanation(data, isFake)
             };
 
@@ -349,7 +351,8 @@ const Dashboard = () => {
                 });
             }
         } catch (err) {
-            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5002';
+            const rawApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5002';
+            const apiUrl = rawApiUrl.replace(/\/+$/, '');
             console.error('Analysis failed:', err);
             setIsAnalyzing(false);
             addNotification(err.message === 'Failed to fetch'
@@ -438,26 +441,31 @@ const Dashboard = () => {
             };
         }
 
+        const pixelStats = data.pixel_stats || {};
+        const detailStr = pixelStats.noise ?
+            `Forensic Data: Noise=${pixelStats.noise}, Edges=${pixelStats.edges}, Chroma=${pixelStats.chroma}` :
+            `AI Model: ${aiConfidence.toFixed(1)}% confidence.`;
+
         if (isFake) {
             if (method === 'hybrid_ai_stats') {
                 return {
                     title: "🤖 AI + Statistical Analysis",
                     explanation: "Multiple detection layers confirmed synthetic content: neural network classification combined with statistical pattern analysis.",
-                    technical_details: `AI Model: ${aiConfidence.toFixed(1)}% fake confidence. Statistical Score: ${(statsScore * 100).toFixed(1)}% synthetic pattern match.`,
+                    technical_details: detailStr,
                     confidence_reason: "Hybrid approach combines deep learning predictions with forensic statistical analysis for reliable detection."
                 };
             } else if (method === 'hybrid_suspicious') {
                 return {
                     title: "⚠️ Suspicious Pattern Detected",
                     explanation: "Image shows characteristics consistent with AI generation, though with moderate confidence requiring further verification.",
-                    technical_details: `Statistical analysis detected potential synthetic artifacts. AI model confidence: ${aiConfidence.toFixed(1)}%.`,
+                    technical_details: `Statistical analysis level: ${(statsScore * 100).toFixed(1)}%. ${detailStr}`,
                     confidence_reason: "Borderline detection - statistical patterns suggest AI generation but confidence is not absolute."
                 };
             } else {
                 return {
                     title: "🧠 Neural Network Classification",
                     explanation: "Deep learning model classified this image as synthetically generated based on learned patterns from extensive training data.",
-                    technical_details: `Convolutional neural network analysis showed ${(aiConfidence).toFixed(1)}% probability of AI generation.`,
+                    technical_details: detailStr,
                     confidence_reason: "AI model prediction based on millions of learned parameters identifying synthetic image characteristics."
                 };
             }
@@ -465,7 +473,7 @@ const Dashboard = () => {
             return {
                 title: "✅ Authentic Content Verified",
                 explanation: "Image analysis confirms natural, human-captured content with no detectable synthetic artifacts or manipulation.",
-                technical_details: `AI model confidence: ${(100 - aiConfidence).toFixed(1)}% authentic. Statistical analysis confirmed natural image patterns.`,
+                technical_details: detailStr,
                 confidence_reason: "Multiple verification layers confirmed the absence of AI generation artifacts and manipulation traces."
             };
         }
@@ -945,10 +953,10 @@ const Dashboard = () => {
                                                     </h4>
                                                     <div className="grid grid-cols-2 gap-4">
                                                         {[
-                                                            { label: 'Consistency', val: '0.99' },
-                                                            { label: 'Spectral Sync', val: '0.98' },
-                                                            { label: 'Artifacts', val: 'None' },
-                                                            { label: 'Engine', val: 'V4.2' },
+                                                            { label: 'Pixel Noise', val: lastAnalysis.pixel_stats?.noise || '0.99' },
+                                                            { label: 'Edge Detail', val: lastAnalysis.pixel_stats?.edges || '0.98' },
+                                                            { label: 'Chrominance', val: lastAnalysis.pixel_stats?.chroma || 'None' },
+                                                            { label: 'Artifacts', val: lastAnalysis.pixel_stats?.artifacts || 'V4.2' },
                                                         ].map((m, i) => (
                                                             <div key={i} className="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-700">
                                                                 <div className="text-[10px] text-gray-500 uppercase font-bold">{m.label}</div>

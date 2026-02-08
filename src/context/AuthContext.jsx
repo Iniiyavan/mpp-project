@@ -31,6 +31,22 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
+    useEffect(() => {
+        // Seed an admin user if they don't exist
+        const users = JSON.parse(localStorage.getItem('users') || '[]');
+        const adminExists = users.find(u => u.email === 'admin@rebel.ai');
+
+        if (!adminExists) {
+            users.push({
+                name: 'REBEL Admin',
+                email: 'admin@rebel.ai',
+                password: 'admin',
+                role: 'admin'
+            });
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+    }, []);
+
     const signup = (name, email, password) => {
         // Simulated signup
         const users = JSON.parse(localStorage.getItem('users') || '[]');
@@ -39,7 +55,7 @@ export const AuthProvider = ({ children }) => {
             throw new Error('User already exists');
         }
 
-        const newUser = { name, email, password };
+        const newUser = { name, email, password, role: 'user' };
         users.push(newUser);
         localStorage.setItem('users', JSON.stringify(users));
 
@@ -55,7 +71,7 @@ export const AuthProvider = ({ children }) => {
             throw new Error('Invalid email or password');
         }
 
-        const authUser = { name: user.name, email: user.email };
+        const authUser = { name: user.name, email: user.email, role: user.role || 'user' };
         setUser(authUser);
         localStorage.setItem('user', JSON.stringify(authUser));
         return authUser;

@@ -70,9 +70,17 @@ const Navbar = () => {
                                     >
                                         Dashboard
                                     </Link>
+                                    {user.role === 'admin' && (
+                                        <Link
+                                            to="/admin"
+                                            className="px-3 py-2 rounded-md text-sm font-bold text-red-500 hover:text-red-600 border border-red-500/20 bg-red-500/5"
+                                        >
+                                            Admin
+                                        </Link>
+                                    )}
                                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
                                         <User size={14} className="text-blue-500" />
-                                        <span className="text-xs font-semibold">{user.name.split(' ')[0]}</span>
+                                        <span className="text-xs font-semibold">{user.name.split(' ')[0]} {user.role === 'admin' ? '(Admin)' : ''}</span>
                                     </div>
                                     <button
                                         onClick={handleLogout}
@@ -149,6 +157,15 @@ const Navbar = () => {
                                     >
                                         Dashboard
                                     </Link>
+                                    {user.role === 'admin' && (
+                                        <Link
+                                            to="/admin"
+                                            onClick={() => setIsOpen(false)}
+                                            className="block px-3 py-2 rounded-md text-base font-bold text-red-500"
+                                        >
+                                            Admin Dashboard
+                                        </Link>
+                                    )}
                                     <button
                                         onClick={handleLogout}
                                         className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-red-500"

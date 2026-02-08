@@ -6,6 +6,8 @@ const Home = React.lazy(() => import('./pages/Home'));
 const Signup = React.lazy(() => import('./pages/Signup'));
 const Login = React.lazy(() => import('./pages/Login'));
 const Dashboard = React.lazy(() => import('./pages/Dashboard'));
+const AdminDashboard = React.lazy(() => import('./pages/AdminDashboard'));
+const AdminAuth = React.lazy(() => import('./pages/AdminAuth'));
 
 // Loading component
 const LoadingScreen = () => (
@@ -19,10 +21,23 @@ const LoadingScreen = () => (
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
 
-  if (loading) return null; // Or a loading spinner
+  if (loading) return null;
 
   if (!user) {
     return <Navigate to="/login" replace />;
+  }
+
+  return children;
+};
+
+// Admin Route Component
+const AdminRoute = ({ children }) => {
+  const { user, loading } = useAuth();
+
+  if (loading) return null;
+
+  if (!user || user.role !== 'admin') {
+    return <Navigate to="/" replace />;
   }
 
   return children;
@@ -41,6 +56,15 @@ function AppContent() {
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
+          }
+        />
+        <Route path="/admin-auth" element={<AdminAuth />} />
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
           }
         />
         {/* Fallback */}
