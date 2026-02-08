@@ -29,8 +29,6 @@ import { useAuth } from '../context/AuthContext';
 
 import dashboardBg from '../assets/dashboard-bg.png';
 import CameraCapture from '../components/CameraCapture';
-import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
 import confetti from 'canvas-confetti';
 
 const Dashboard = () => {
@@ -362,6 +360,11 @@ const Dashboard = () => {
 
     const downloadReport = async () => {
         if (!reportRef.current) return;
+        addNotification('Loading PDF engines...', 'info');
+
+        const html2canvas = (await import('html2canvas')).default;
+        const { jsPDF } = await import('jspdf');
+
         addNotification('Generating PDF report...', 'info');
         const element = reportRef.current;
         const canvas = await html2canvas(element, {
@@ -1532,7 +1535,6 @@ const Dashboard = () => {
                     backgroundImage: `url(${dashboardBg})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    backgroundAttachment: 'fixed'
                 }}
             >
                 <motion.div

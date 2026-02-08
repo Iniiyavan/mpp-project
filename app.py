@@ -27,17 +27,42 @@ fake_hashes = set()  # Set of SHA256 hashes for known fake images
 def load_ai_model():
     global model
     if not os.path.exists(MODEL_PATH):
-        print("Model file not found.")
+        print("[!] Model file not found:", MODEL_PATH)
         return
 
     try:
-        print(f"Neural Engine: Loading {MODEL_PATH}...")
-        # Load with Keras 3
+        print(f"[*] Neural Engine: Loading {MODEL_PATH}...")
+        # Attempt to load the model normally
         model = keras.models.load_model(MODEL_PATH, compile=False)
-        print("AI Model Loaded Successfully!")
+        print("[+] AI Model Loaded Successfully!")
     except Exception as e:
-        print(f"Error loading model: {str(e)}")
-        print("TIP: Run 'python repair_model.py' first!")
+        print(f"[-] Direct load failed: {str(e)}")
+        print("[*] Attempting architectural reconstruction match...")
+        try:
+            # Reconstruct the expected architecture manually as a fallback
+            from tensorflow.keras.applications import VGG16
+            from tensorflow.keras.models import Sequential
+            from tensorflow.keras.layers import Dense, Flatten, Dropout, Input
+            
+            # Rebuild exactly as expected by the trained weights
+            vgg_base = VGG16(weights=None, include_top=False, input_shape=(128, 128, 3))
+            
+            # Using Input(shape=...) to be compatible with Keras 3
+            model = Sequential([
+                Input(shape=(128, 128, 3)),
+                vgg_base,
+                Flatten(),
+                Dense(256, activation='relu'),
+                Dropout(0.3),
+                Dense(1, activation='sigmoid')
+            ])
+            
+            # Try to load weights into this structure
+            model.load_weights(MODEL_PATH)
+            print("[+] AI Model Reconstructed and Weights Loaded Successfully!")
+        except Exception as e2:
+            print(f"[-] Critical Error: Could not load or reconstruct model: {str(e2)}")
+            print("TIP: Run 'python fix_model_final.py' to regenerate the model file.")
 
 def load_fake_hashes():
     """Load the database of known fake image hashes"""
